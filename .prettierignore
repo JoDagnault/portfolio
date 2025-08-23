@@ -1,0 +1,21 @@
+# dependencies
+node_modules
+
+# Angular build output
+dist
+.angular
+
+# test coverage
+coverage
+
+# env/IDE
+.env*
+.vscode
+.idea
+
+# hosts you might use
+.vercel
+.netlify
+
+# misc
+*.min.* 
