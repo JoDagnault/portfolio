@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 interface Project {
   name: string;
@@ -9,6 +10,7 @@ interface Project {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  imports: [CommonModule],
 })
 export class AppComponent {
   projects: Project[] = [
