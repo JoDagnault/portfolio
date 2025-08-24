@@ -1,0 +1,34 @@
+.navigation {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #f5f5f5;
+
+  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+  }
+}
+
+main {
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 3rem;
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 1rem;
+  }
+}
