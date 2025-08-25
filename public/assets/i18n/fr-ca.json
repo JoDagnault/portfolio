@@ -25,5 +25,7 @@
     "title": "Me contacter",
     "email": "Courriel"
   },
-  "toggleLang": "English"
+  "toggleLang": "English",
+  "darkMode": "Mode sombre",
+  "lightMode": "Mode clair"
 }

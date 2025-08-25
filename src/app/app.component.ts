@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
+import { ThemeService } from './theme.service';
 
 interface Project {
   nameKey: string;
@@ -15,6 +16,7 @@ interface Project {
 })
 export class AppComponent {
   private translocoService = inject(TranslocoService);
+  themeService = inject(ThemeService);
   constructor() {
     document.documentElement.lang = this.translocoService.getActiveLang();
     this.translocoService.langChanges$.subscribe((lang) => {
@@ -38,5 +40,9 @@ export class AppComponent {
   toggleLanguage() {
     const lang = this.translocoService.getActiveLang();
     this.translocoService.setActiveLang(lang === 'en-ca' ? 'fr-ca' : 'en-ca');
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 }
