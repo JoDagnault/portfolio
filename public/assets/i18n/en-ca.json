@@ -25,5 +25,7 @@
     "title": "Contact Me",
     "email": "Email"
   },
-  "toggleLang": "Français"
+  "toggleLang": "Français",
+  "darkMode": "Dark mode",
+  "lightMode": "Light mode"
 }

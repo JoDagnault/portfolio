@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global theme variables */
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --nav-background-color: #f5f5f5;
+  --link-color: #333333;
+}
+
+.dark-theme {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --nav-background-color: #1f1f1f;
+  --link-color: #90caf9;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+}
+
+a {
+  color: var(--link-color);
+}

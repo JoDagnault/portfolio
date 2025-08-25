@@ -3,6 +3,11 @@
   <a href="#projects">{{ 'nav.projects' | transloco }}</a>
   <a href="#contact">{{ 'nav.contact' | transloco }}</a>
   <button (click)="toggleLanguage()">{{ 'toggleLang' | transloco }}</button>
+  <button (click)="toggleTheme()">
+    {{
+      themeService.currentTheme === 'dark' ? ('lightMode' | transloco) : ('darkMode' | transloco)
+    }}
+  </button>
 </nav>
 
 <main>
