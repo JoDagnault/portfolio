@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "aboutMe": {
+    "title": "À propos de moi",
+    "content": "Salut! Je suis Jonathan Dagnault, un étudiant en génie logiciel à l'Université Laval au Québec et un CPI candidat à la profession d'ingénieur."
+  },
+  "projects": {
+    "title": "Projets",
+    "items": {
+      "portfolio": {
+        "name": "Site Portfolio",
+        "description": "Ce site web construit avec Angular pour présenter mon travail."
+      },
+      "sample": {
+        "name": "Projet d'exemple",
+        "description": "Un espace réservé pour de futurs projets."
+      }
+    }
+  },
+  "contact": {
+    "title": "Me contacter",
+    "email": "Courriel"
+  },
+  "toggleLang": "English"
+}

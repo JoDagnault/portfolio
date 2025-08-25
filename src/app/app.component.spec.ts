@@ -1,10 +1,27 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { provideTransloco, TranslocoLoader, translocoConfig } from '@jsverse/transloco';
+import { of } from 'rxjs';
+
+class TestingLoader implements TranslocoLoader {
+  getTranslation() {
+    return of({});
+  }
+}
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
+      providers: [
+        provideTransloco({
+          config: translocoConfig({
+            availableLangs: ['en-ca', 'fr-ca'],
+            defaultLang: 'en-ca',
+          }),
+          loader: TestingLoader,
+        }),
+      ],
     }).compileComponents();
   });
 
