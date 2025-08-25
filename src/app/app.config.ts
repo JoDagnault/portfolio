@@ -3,7 +3,13 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { provideTransloco, TranslocoLoader, Translation, translocoConfig } from '@ngneat/transloco';
+import {
+  provideTransloco,
+  TranslocoLoader,
+  Translation,
+  translocoConfig,
+} from '@jsverse/transloco';
+import { provideTranslocoPersistLang } from '@jsverse/transloco-persist-lang';
 
 import { routes } from './app.routes';
 
@@ -21,10 +27,11 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(),
+    provideTranslocoPersistLang({ storage: { useValue: localStorage } }),
     provideTransloco({
       config: translocoConfig({
-        availableLangs: ['en', 'fr'],
-        defaultLang: 'en',
+        availableLangs: ['en-ca', 'fr-ca'],
+        defaultLang: 'en-ca',
         reRenderOnLangChange: true,
         prodMode: true,
       }),

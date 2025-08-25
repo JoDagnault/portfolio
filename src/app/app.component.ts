@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslocoModule, TranslocoService } from '@ngneat/transloco';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 interface Project {
   nameKey: string;
@@ -15,6 +15,12 @@ interface Project {
 })
 export class AppComponent {
   private translocoService = inject(TranslocoService);
+  constructor() {
+    document.documentElement.lang = this.translocoService.getActiveLang();
+    this.translocoService.langChanges$.subscribe((lang) => {
+      document.documentElement.lang = lang;
+    });
+  }
 
   projects: Project[] = [
     {
@@ -31,6 +37,6 @@ export class AppComponent {
 
   toggleLanguage() {
     const lang = this.translocoService.getActiveLang();
-    this.translocoService.setActiveLang(lang === 'en' ? 'fr' : 'en');
+    this.translocoService.setActiveLang(lang === 'en-ca' ? 'fr-ca' : 'en-ca');
   }
 }
