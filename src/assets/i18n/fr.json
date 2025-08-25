@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "sections": {
+    "about": "À propos de moi",
+    "projects": "Projets",
+    "contact": "Contactez-moi"
+  },
+  "about": {
+    "intro": "Salut! Je suis Jonathan Dagnault, étudiant en génie logiciel à l'Université Laval à Québec et candidat à la profession d'ingénieur."
+  },
+  "contact": {
+    "email": "Courriel"
+  },
+  "language": {
+    "switch": "English"
+  }
+}

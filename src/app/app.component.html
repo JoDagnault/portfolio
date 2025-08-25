@@ -1,20 +1,19 @@
 <nav class="navigation">
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
+  <a href="#about">{{ 'nav.about' | transloco }}</a>
+  <a href="#projects">{{ 'nav.projects' | transloco }}</a>
+  <a href="#contact">{{ 'nav.contact' | transloco }}</a>
 </nav>
+
+<button (click)="switchLanguage()">{{ 'language.switch' | transloco }}</button>
 
 <main>
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hi! I'm Jonathan Dagnault, a software engineering student at Université Laval in Québec and a
-      CPI candidat à la profession d'ingénieur.
-    </p>
+    <h2>{{ 'sections.about' | transloco }}</h2>
+    <p>{{ 'about.intro' | transloco }}</p>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2>{{ 'sections.projects' | transloco }}</h2>
     <ul>
       <li *ngFor="let project of projects">
         <h3>{{ project.name }}</h3>
@@ -24,9 +23,10 @@
   </section>
 
   <section id="contact">
-    <h2>Contact Me</h2>
+    <h2>{{ 'sections.contact' | transloco }}</h2>
     <p>
-      Email: <a href="mailto:{{ email }}">{{ email }}</a>
+      {{ 'contact.email' | transloco }}:
+      <a href="mailto:{{ email }}">{{ email }}</a>
     </p>
   </section>
 </main>

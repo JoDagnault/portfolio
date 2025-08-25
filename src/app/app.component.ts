@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslocoModule, TranslocoService } from '@ngneat/transloco';
 
 interface Project {
   name: string;
@@ -10,7 +11,7 @@ interface Project {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslocoModule],
 })
 export class AppComponent {
   projects: Project[] = [
@@ -25,4 +26,12 @@ export class AppComponent {
   ];
 
   email = 'jonathan.dagnault@ulaval.ca';
+
+  constructor(private translocoService: TranslocoService) {}
+
+  switchLanguage() {
+    const current = this.translocoService.getActiveLang();
+    const next = current === 'en' ? 'fr' : 'en';
+    this.translocoService.setActiveLang(next);
+  }
 }

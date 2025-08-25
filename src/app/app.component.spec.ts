@@ -1,10 +1,21 @@
 import { TestBed } from '@angular/core/testing';
+import { provideTransloco } from '@ngneat/transloco';
 import { AppComponent } from './app.component';
+import { TranslocoJsonLoader } from './app.config';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
+      providers: [
+        provideTransloco({
+          config: {
+            availableLangs: ['en', 'fr'],
+            defaultLang: 'en',
+          },
+          loader: TranslocoJsonLoader,
+        }),
+      ],
     }).compileComponents();
   });
 

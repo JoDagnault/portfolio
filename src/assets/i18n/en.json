@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "sections": {
+    "about": "About Me",
+    "projects": "Projects",
+    "contact": "Contact Me"
+  },
+  "about": {
+    "intro": "Hi! I'm Jonathan Dagnault, a software engineering student at Université Laval in Québec and a CPI candidat à la profession d'ingénieur."
+  },
+  "contact": {
+    "email": "Email"
+  },
+  "language": {
+    "switch": "Français"
+  }
+}
