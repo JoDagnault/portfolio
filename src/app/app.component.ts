@@ -1,28 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslocoModule, TranslocoService } from '@ngneat/transloco';
 
 interface Project {
-  name: string;
-  description: string;
+  nameKey: string;
+  descriptionKey: string;
 }
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslocoModule],
 })
 export class AppComponent {
+  private translocoService = inject(TranslocoService);
+
   projects: Project[] = [
     {
-      name: 'Portfolio Website',
-      description: 'This website built with Angular to showcase my work.',
+      nameKey: 'projects.items.portfolio.name',
+      descriptionKey: 'projects.items.portfolio.description',
     },
     {
-      name: 'Sample Project',
-      description: 'A placeholder for future projects.',
+      nameKey: 'projects.items.sample.name',
+      descriptionKey: 'projects.items.sample.description',
     },
   ];
 
   email = 'jonathan.dagnault@ulaval.ca';
+
+  toggleLanguage() {
+    const lang = this.translocoService.getActiveLang();
+    this.translocoService.setActiveLang(lang === 'en' ? 'fr' : 'en');
+  }
 }
